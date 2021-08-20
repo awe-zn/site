@@ -1,0 +1,7 @@
+@each $prop, $abbrev in (box-shadow: bx) {
+  @each $key, $value in $theme-colors {
+    .#{$abbrev}-#{$key} {
+      #{$prop}: -8px 8px $value !important;
+    }
+  }
+}
