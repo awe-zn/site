@@ -1,0 +1,32 @@
+.hamburguer {
+  background: none;
+
+  border: none;
+  width: $hamburguer-width;
+  height: $hamburguer-height;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .line {
+    height: $hamburguer-line-height;
+    width: 100%;
+
+    background-color: $hamburguer-line-color;
+
+    transition: $hamburguer-transition-duration all;
+  }
+
+  &:not(.collapsed) {
+    .line {
+      &:nth-child(1) {
+        transform: translateY(7px) rotate(-45deg);
+      }
+      &:nth-child(2) {
+        transform: translateY(-7px) rotate(45deg);
+      }
+    }
+  }
+}

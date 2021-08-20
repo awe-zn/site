@@ -1,0 +1,24 @@
+.typing {
+  word-break: break-all;
+
+  &::after {
+    content: '_';
+
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: inherit;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

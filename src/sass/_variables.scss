@@ -1,3 +1,58 @@
+$awe-blue-first:    #014180;
+$awe-blue-second:   #203c86;
+$awe-blue-third:    #2648a1;
+$awe-blue-fourth:   #224586;
+$awe-light-first:   #fff2f2;
+$awe-light-second:  #999999;
+$awe-gray-first:    #8492A6;
+
 $theme-colors: (
-  'awe-dark': #333
+  'awe-blue-first':   $awe-blue-first,
+  'awe-blue-second':  $awe-blue-second,
+  'awe-blue-third':   $awe-blue-third,
+  'awe-blue-fourth':  $awe-blue-fourth,
+  'awe-light-first':  $awe-light-first,
+  'awe-light-second': $awe-light-second,
+  'awe-gray-first':   $awe-gray-first,
 );
+
+$spacer: 1rem;
+$awe-spacers: (
+  'awe-32': $spacer * 2,
+  'awe-40': $spacer * 2.5,
+  'awe-64': $spacer * 4,
+  'awe-128': $spacer * 8,
+  'awe-152': $spacer * 9.5,
+);
+
+$hamburguer-width:                24px;
+$hamburguer-height:               16px;
+$hamburguer-line-color:           $awe-light-first;
+$hamburguer-line-height:          2px;
+$hamburguer-transition-duration:  0.3s;
+
+$font-family-sans-serif: 'lato', sans-serif;
+
+$font-sizes: (18: 18px, 21: 21px, 24: 24px, 60: 60px, 128: 128px);
+
+$font-weight-thin:        100;
+$font-weight-extra-light: 200;
+$font-weight-light:       300;
+$font-weight-regular:     400;
+$font-weight-medium:      500;
+$font-weight-semibold:    600;
+$font-weight-bold:        700;
+$font-weight-extrabold:   800;
+$font-weight-black:       900;
+
+$btn-border-radius: 0;
+$btn-padding-y:     (1em / 3) * 2;
+$btn-padding-x:     1em + (1em / 3);
+
+$z-indexs: (0);
+@for $i from 5 through 6 {
+  @for $j from 0 through 9 {
+    $index: $i * 100 + $j * 10;
+    $z-indexs: append($z-indexs, $index);
+  }
+}
