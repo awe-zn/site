@@ -1,0 +1,51 @@
+@import '../../../node_modules/swiper/swiper';
+
+.swiper-wrapper {
+  cursor: move;
+}
+
+.swiper-navigation {
+  button {
+    &:disabled {
+      filter: grayscale(1) !important;
+    }
+  }
+}
+
+.swiper-quotes {
+  .swiper-wrapper {
+    .swiper-slide {
+      padding: 0 8px;
+    }
+  }
+  .swiper-slide {
+    .img-profile {
+      @media (max-width: 767px) {
+        max-height: 200px;
+        width: auto !important;
+      }
+
+      max-height: 250px;
+
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+.swiper-cases {
+  .swiper-slide {
+    img {
+      @media (min-width: 576px) {
+        height: 300px;
+        width: 100%;
+
+        object-fit: cover;
+      }
+    }
+  }
+  .icon-swiper {
+    width: 24px;
+    height: 24px;
+  }
+}
