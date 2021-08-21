@@ -3,10 +3,17 @@
 $spacers: map-merge($spacers, $awe-spacers);
 
 $utilities: (
+  'flex': (
+    property: flex,
+    class: flex,
+    values: $flexs,
+    responsive: true,
+  ),
   'font-size': (
     property: font-size,
     class: fz,
     values: $font-sizes,
+    responsive: true,
   ),
   'font-weight': (
     property: font-weight,
@@ -46,5 +53,11 @@ $utilities: (
     class: z,
     responsive: true,
     values: $z-indexs,
+  ),
+  'opacity': (
+    property: opacity,
+    class: opacity,
+    responsive: true,
+    values: $opacities,
   ),
 );

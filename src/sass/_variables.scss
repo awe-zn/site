@@ -4,7 +4,11 @@ $awe-blue-third:    #2648a1;
 $awe-blue-fourth:   #224586;
 $awe-light-first:   #fff2f2;
 $awe-light-second:  #999999;
-$awe-gray-first:    #8492A6;
+$awe-light-third:   #ffffff;
+$awe-gray-first:    #8492a6;
+$awe-gray-second:   #273444;
+$awe-dark-first:    #333333;
+$awe-yellow-first:  #ffc460;
 
 $theme-colors: (
   'awe-blue-first':   $awe-blue-first,
@@ -13,17 +17,26 @@ $theme-colors: (
   'awe-blue-fourth':  $awe-blue-fourth,
   'awe-light-first':  $awe-light-first,
   'awe-light-second': $awe-light-second,
+  'awe-light-third':  $awe-light-third,
   'awe-gray-first':   $awe-gray-first,
+  'awe-gray-second':  $awe-gray-second,
+  'awe-dark-first':   $awe-dark-first,
+  'awe-yellow-first': $awe-yellow-first,
 );
 
 $spacer: 1rem;
 $awe-spacers: (
+  'awe-12': $spacer * 0.75,
   'awe-32': $spacer * 2,
   'awe-40': $spacer * 2.5,
   'awe-64': $spacer * 4,
+  'awe-80': $spacer * 5,
+  'awe-96': $spacer * 6,
+  'awe-112': $spacer * 7,
   'awe-128': $spacer * 8,
   'awe-152': $spacer * 9.5,
 );
+$enable-negative-margins: true;
 
 $hamburguer-width:                24px;
 $hamburguer-height:               16px;
@@ -33,7 +46,19 @@ $hamburguer-transition-duration:  0.3s;
 
 $font-family-sans-serif: 'lato', sans-serif;
 
-$font-sizes: (18: 18px, 21: 21px, 24: 24px, 60: 60px, 128: 128px);
+$font-sizes: (
+  14: 14px,
+  18: 18px,
+  20: 20px,
+  21: 21px,
+  22: 22px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  60: 60px,
+  72: 72px,
+  128: 128px
+);
 
 $font-weight-thin:        100;
 $font-weight-extra-light: 200;
@@ -55,4 +80,15 @@ $z-indexs: (0);
     $index: $i * 100 + $j * 10;
     $z-indexs: append($z-indexs, $index);
   }
+}
+
+$flexs: (0);
+@for $index from 1 through 20 {
+  $flexs: append($flexs, $index);
+}
+
+$opacities: (0: 0);
+@for $i from 1 through 10 {
+  $index: $i * 10;
+  $opacities: map-merge($opacities, ($index: percentage($index / 100)));
 }

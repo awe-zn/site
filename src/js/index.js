@@ -1,4 +1,5 @@
 import bootstrap from 'bootstrap';
+import Swiper from 'swiper/swiper-bundle';
 
 (() => {
   const typingEls = [...document.querySelectorAll('.typing')];
@@ -25,7 +26,6 @@ import bootstrap from 'bootstrap';
         }
 
         if (indexCurrentChar === 0) {
-          console.log(indexCurrentChar);
           setTimeout(() => {
             el.textContent = '';
           }, delay / 2);
@@ -36,3 +36,36 @@ import bootstrap from 'bootstrap';
     }, delay);
   });
 })();
+
+new Swiper('.swiper-quotes .swiper-container', {
+  slidesPerView: 1.33,
+  spaceBetween: 24,
+  loop: true,
+  navigation: {
+    prevEl: '.swiper-quotes .swiper-prev',
+    nextEl: '.swiper-quotes .swiper-next',
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 1.5,
+    },
+  },
+});
+
+new Swiper('.swiper-cases .swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  navigation: {
+    prevEl: '.swiper-cases .swiper-prev',
+    nextEl: '.swiper-cases .swiper-next',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 3,
+    },
+  },
+});
