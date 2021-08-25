@@ -18317,6 +18317,15 @@ new (swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_2___default())('.swiper-cases
     }
   }
 });
+new (swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_2___default())('.swiper-news .swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  navigation: {
+    prevEl: '.swiper-news .swiper-prev',
+    nextEl: '.swiper-news .swiper-next'
+  }
+});
 })();
 
 /******/ })()

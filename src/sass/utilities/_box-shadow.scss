@@ -3,14 +3,52 @@
     .#{$abbrev}-#{$key}-left-bottom {
       #{$prop}: -8px 8px $value !important;
     }
-    .#{$abbrev}-#{$key}-left-top {
-      #{$prop}: -8px -8px $value !important;
-    }
     .#{$abbrev}-#{$key}-right-top {
       #{$prop}: 8px -8px $value !important;
+    }
+
+    .#{$abbrev}-#{$key}-left-top {
+      #{$prop}: -8px -8px $value !important;
     }
     .#{$abbrev}-#{$key}-right-bottom {
       #{$prop}: 8px 8px $value !important;
     }
+  }
+}
+
+.bx-left-bottom {
+  transform: translateX(8px) translateY(-8px) !important;
+
+  &.bx-hover:hover {
+    transform: translateX(0) translateY(0) !important;
+  }
+}
+.bx-right-top {
+  transform: translateX(-8px) translateY(8px) !important;
+
+  &.bx-hover:hover {
+    transform: translateX(0) translateY(0) !important;
+  }
+}
+
+.bx-left-top {
+  transform: translateX(8px) translateY(8px) !important;
+
+  &.bx-hover:hover {
+    transform: translateX(0) translateY(0) !important;
+  }
+}
+.bx-right-bottom {
+  transform: translateX(-8px) translateY(-8px) !important;
+
+  &.bx-hover:hover {
+    transform: translateX(0) translateY(0) !important;
+  }
+}
+.bx-hover {
+  transition: 0.3s all !important;
+
+  &:hover {
+    box-shadow: 0 0 transparent !important;
   }
 }
