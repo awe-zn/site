@@ -69,3 +69,13 @@ new Swiper('.swiper-cases .swiper-container', {
     },
   },
 });
+
+new Swiper('.swiper-news .swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  navigation: {
+    prevEl: '.swiper-news .swiper-prev',
+    nextEl: '.swiper-news .swiper-next',
+  },
+});
