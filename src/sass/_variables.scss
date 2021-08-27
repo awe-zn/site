@@ -11,6 +11,7 @@ $awe-gray-first:    #8492a6;
 $awe-gray-second:   #273444;
 $awe-gray-third:    #eff2f7;
 $awe-gray-fourth:   #727272;
+$awe-gray-fifth:    #C0CCDA;
 $awe-dark-first:    #333333;
 $awe-yellow-first:  #ffc460;
 
@@ -28,6 +29,7 @@ $theme-colors: (
   'awe-gray-second':  $awe-gray-second,
   'awe-gray-third':   $awe-gray-third,
   'awe-gray-fourth':  $awe-gray-fourth,
+  'awe-gray-fifth':   $awe-gray-fifth,
   'awe-dark-first':   $awe-dark-first,
   'awe-yellow-first': $awe-yellow-first,
 );
@@ -59,6 +61,7 @@ $hamburguer-transition-duration:  0.3s;
 $font-family-sans-serif: 'lato', sans-serif;
 
 $font-sizes: (
+  12: 12px,
   14: 14px,
   18: 18px,
   20: 20px,

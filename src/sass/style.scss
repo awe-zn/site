@@ -232,6 +232,50 @@
   }
 }
 
+.teammates {
+  .teammate {
+    object-fit: cover;
+
+    @media (min-width: 576px) {
+      height: 200px;
+    }
+    @media (min-width: 768px) {
+      height: 280px;
+    }
+    @media (min-width: 992px) {
+      height: 250px;
+    }
+    @media (min-width: 1200px) and (max-width: 1399px) {
+      height: 210px;
+    }
+  }
+
+  .team-item {
+    @extend .transition;
+
+    &:hover {
+      background-color: $awe-blue-third !important;
+
+      color: $awe-light-third !important;
+
+      .teammate {
+        border-color: $awe-yellow-first !important;
+      }
+    }
+  }
+}
+
+.section-team {
+  .banner-new-member {
+    @media (min-width: 992px) {
+      background-image: url('../image/bg-new-member.svg');
+      background-repeat: no-repeat;
+      background-position-y: bottom;
+      background-size: auto 100%;
+    }
+  }
+}
+
 .transition {
   transition: 0.3s all;
 }
