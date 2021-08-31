@@ -4,6 +4,7 @@ $awe-blue-third:    #2648a1;
 $awe-blue-fourth:   #224586;
 $awe-blue-fifth:    #334166;
 $awe-blue-sixth:    #0154a6;
+$awe-blue-seventh:  #56B6FF;
 $awe-light-first:   #fff2f2;
 $awe-light-second:  #999999;
 $awe-light-third:   #ffffff;
@@ -11,8 +12,11 @@ $awe-gray-first:    #8492a6;
 $awe-gray-second:   #273444;
 $awe-gray-third:    #eff2f7;
 $awe-gray-fourth:   #727272;
-$awe-gray-fifth:    #C0CCDA;
+$awe-gray-fifth:    #c0ccda;
+$awe-gray-sixth:    #f9fafc;
+$awe-gray-seventh:  #fafafa;
 $awe-dark-first:    #333333;
+$awe-dark-second:   #707c8c;
 $awe-yellow-first:  #ffc460;
 
 $theme-colors: (
@@ -22,6 +26,7 @@ $theme-colors: (
   'awe-blue-fourth':  $awe-blue-fourth,
   'awe-blue-fifth':   $awe-blue-fifth,
   'awe-blue-sixth':   $awe-blue-sixth,
+  'awe-blue-seventh': $awe-blue-seventh,
   'awe-light-first':  $awe-light-first,
   'awe-light-second': $awe-light-second,
   'awe-light-third':  $awe-light-third,
@@ -30,7 +35,10 @@ $theme-colors: (
   'awe-gray-third':   $awe-gray-third,
   'awe-gray-fourth':  $awe-gray-fourth,
   'awe-gray-fifth':   $awe-gray-fifth,
+  'awe-gray-sixth':   $awe-gray-sixth,
+  'awe-gray-seventh': $awe-gray-seventh,
   'awe-dark-first':   $awe-dark-first,
+  'awe-dark-second':  $awe-dark-second,
   'awe-yellow-first': $awe-yellow-first,
 );
 
@@ -43,6 +51,7 @@ $awe-spacers: (
   'awe-12': $spacer * 0.75,
   'awe-32': $spacer * 2,
   'awe-40': $spacer * 2.5,
+  'awe-56': $spacer * 3.5,
   'awe-64': $spacer * 4,
   'awe-80': $spacer * 5,
   'awe-96': $spacer * 6,
@@ -63,6 +72,7 @@ $font-family-sans-serif: 'lato', sans-serif;
 $font-sizes: (
   12: 12px,
   14: 14px,
+  16: 16px,
   18: 18px,
   20: 20px,
   21: 21px,
