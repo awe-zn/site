@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "license": "MIT",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -21,8 +22,10 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.1.0",
+    "feather-icons": "^4.28.0",
     "swiper": "^6.8.3"
   }
 }

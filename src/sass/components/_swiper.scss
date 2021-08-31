@@ -1,4 +1,4 @@
-@import '../../../node_modules/swiper/swiper';
+@import '../../../node_modules/swiper/swiper-bundle.min.css';
 
 .swiper-wrapper {
   cursor: move;
@@ -47,5 +47,17 @@
   .icon-swiper {
     width: 24px;
     height: 24px;
+  }
+}
+
+.swiper-mentor {
+  .swiper {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+    }
   }
 }
