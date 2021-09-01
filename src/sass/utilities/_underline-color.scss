@@ -1,0 +1,24 @@
+@each $abbrev in (underline) {
+  .#{$abbrev} {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      bottom: $underline-height * -1;
+
+      width: 100%;
+      height: $underline-height;
+
+      border-radius: $underline-radius;
+    }
+  }
+  @each $key, $value in $theme-colors {
+    .#{$abbrev}-#{$key} {
+      &::before {
+        background-color: $value;
+      }
+    }
+  }
+}

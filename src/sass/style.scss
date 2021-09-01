@@ -1,6 +1,17 @@
 @import 'bootstrap';
 @import 'components';
 
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  footer {
+    margin-top: auto;
+  }
+}
+
 .logo-header {
   height: 48px !important;
 }
@@ -284,6 +295,34 @@ footer .footer {
   transition: 0.3s all;
 }
 
+.img-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-thumb {
+  object-fit: cover;
+
+  @media (max-width: 575px) {
+    max-height: 400px;
+  }
+  @media (min-width: 576px) {
+    height: 400px;
+  }
+  @media (min-width: 768px) {
+    height: 280px;
+  }
+  @media (min-width: 992px) {
+    height: 250px;
+  }
+  @media (min-width: 1200px) {
+    height: 300px;
+  }
+  @media (min-width: 1200px) {
+    height: 350px;
+  }
+}
+
 *::-webkit-scrollbar {
   width: 10px;
   height: 0;
@@ -291,8 +330,8 @@ footer .footer {
 *::-webkit-scrollbar-thumb {
   background-color: $awe-blue-third;
   border-radius: 8px;
-  border: 2px solid $awe-light-first;
+  border: 2px solid $awe-light-third;
 }
 *::-webkit-scrollbar-track {
-  background: $awe-light-first;
+  background: $awe-light-third;
 }
