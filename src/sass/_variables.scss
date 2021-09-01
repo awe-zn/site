@@ -4,7 +4,8 @@ $awe-blue-third:    #2648a1;
 $awe-blue-fourth:   #224586;
 $awe-blue-fifth:    #334166;
 $awe-blue-sixth:    #0154a6;
-$awe-blue-seventh:  #56B6FF;
+$awe-blue-seventh:  #56b6ff;
+$awe-blue-eighth:   #3c4858;
 $awe-light-first:   #fff2f2;
 $awe-light-second:  #999999;
 $awe-light-third:   #ffffff;
@@ -27,6 +28,7 @@ $theme-colors: (
   'awe-blue-fifth':   $awe-blue-fifth,
   'awe-blue-sixth':   $awe-blue-sixth,
   'awe-blue-seventh': $awe-blue-seventh,
+  'awe-blue-eighth':  $awe-blue-eighth,
   'awe-light-first':  $awe-light-first,
   'awe-light-second': $awe-light-second,
   'awe-light-third':  $awe-light-third,
@@ -47,7 +49,13 @@ $awe-position-values: (
 );
 
 $spacer: 1rem;
-$awe-spacers: (
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
   'awe-12': $spacer * 0.75,
   'awe-32': $spacer * 2,
   'awe-40': $spacer * 2.5,
@@ -78,26 +86,39 @@ $font-sizes: (
   21: 21px,
   22: 22px,
   24: 24px,
+  26: 26px,
   28: 28px,
   32: 32px,
+  38: 38px,
   60: 60px,
   72: 72px,
   128: 128px
 );
 
-$font-weight-thin:        100;
-$font-weight-extra-light: 200;
-$font-weight-light:       300;
-$font-weight-regular:     400;
-$font-weight-medium:      500;
-$font-weight-semibold:    600;
-$font-weight-bold:        700;
-$font-weight-extrabold:   800;
-$font-weight-black:       900;
+$underline-height:          6px;
+$underline-radius:          $underline-height / 2;
+
+$font-weight-thin:          100;
+$font-weight-extra-light:   200;
+$font-weight-light:         300;
+$font-weight-regular:       400;
+$font-weight-medium:        500;
+$font-weight-semibold:      600;
+$font-weight-bold:          700;
+$font-weight-extrabold:     800;
+$font-weight-black:         900;
 
 $btn-border-radius: 0;
 $btn-padding-y:     (1em / 3) * 2;
 $btn-padding-x:     1em + (1em / 3);
+
+$breadcrumb-font-size:      18px;
+$breadcrumb-margin-bottom:  0;
+$breadcrumb-divider:        quote(">>");
+$breadcrumb-item-padding-x: 0.25rem;
+$breadcrumb-divider-color:  $awe-gray-first;
+$breadcrumb-active-color:   $awe-gray-first;
+$breadcrumb-item-color:          $awe-blue-third;
 
 $z-indexs: (0);
 @for $i from 5 through 6 {

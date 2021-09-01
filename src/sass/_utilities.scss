@@ -1,6 +1,6 @@
 @import 'utilities/box-shadow';
+@import 'utilities/underline-color';
 
-$spacers: map-merge($spacers, $awe-spacers);
 $position-values: map-merge($position-values, $awe-position-values);
 
 $utilities: (
