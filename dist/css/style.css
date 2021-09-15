@@ -21275,8 +21275,11 @@ body footer {
   position: relative;
 }
 
-.news-index-item .title h3, .news-index-item .title .h3 {
+.news-index-item .title img + h3, .news-index-item .title img + .h3 {
   position: absolute;
+}
+
+.news-index-item .title h3, .news-index-item .title .h3 {
   bottom: 0;
   padding: 24px;
   margin: 0;
@@ -21396,6 +21399,17 @@ footer .footer {
 
 .transition, .teammates .team-item {
   transition: 0.3s all;
+}
+
+.role {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.role span + span::before {
+  content: ',';
+  margin-right: 4px;
 }
 
 .img-cover {

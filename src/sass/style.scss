@@ -158,8 +158,10 @@ body {
   .title {
     position: relative;
 
-    h3 {
+    img + h3 {
       position: absolute;
+    }
+    h3 {
       bottom: 0;
 
       padding: 24px;
@@ -293,6 +295,19 @@ footer .footer {
 
 .transition {
   transition: 0.3s all;
+}
+
+.role {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  span + span {
+    &::before {
+      content: ',';
+      margin-right: 4px;
+    }
+  }
 }
 
 .img-cover {

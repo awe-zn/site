@@ -69,9 +69,7 @@ gulp.task(
 export default () => {
   const browser = browserSync.create();
   browser.init({
-    server: {
-      baseDir: './',
-    },
+    proxy: 'http://localhost:8080',
   });
 
   gulp.watch(
@@ -96,7 +94,7 @@ export default () => {
     .watch([
       resolve(__dirname, 'src', 'js', '**', '*'),
       resolve(__dirname, 'src', 'image', '**', '*'),
-      resolve(__dirname, 'pages', '**', '*.html'),
+      resolve(__dirname, '**', '*.php'),
     ])
     .on('change', browser.reload);
 };

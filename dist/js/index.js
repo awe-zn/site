@@ -7646,6 +7646,9 @@ function initSwiper() {
       1200: {
         slidesPerView: 1.5
       }
+    },
+    autoplay: {
+      delay: 3000
     }
   });
   new (swiper_swiper_bundle__WEBPACK_IMPORTED_MODULE_1___default())('.swiper-cases .swiper-container', {

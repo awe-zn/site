@@ -25,6 +25,9 @@ function initSwiper() {
         slidesPerView: 1.5,
       },
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
 
   new Swiper('.swiper-cases .swiper-container', {
