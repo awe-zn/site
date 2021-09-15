@@ -208,7 +208,7 @@ $theme = get_bloginfo("template_url");
   }
   ?>
 
-  <section class="bg-awe-blue-third text-awe-light-third section-search">
+  <section class="bg-awe-blue-third text-awe-light-third section-search" id="section-search">
     <div class="container pt-awe-128 pb-awe-96">
       <div class="row mb-awe-80">
         <div class="col-md-10 col-lg-6 col-xxl-5">
@@ -351,7 +351,7 @@ $theme = get_bloginfo("template_url");
 
   if ($projects->have_posts()) {
   ?>
-    <section>
+    <section id="projects">
       <div class="container pb-5 pt-awe-80">
         <div class="row">
           <div class="col-12">
@@ -707,7 +707,7 @@ $theme = get_bloginfo("template_url");
 
   if ($team->have_posts()) {
   ?>
-    <section class="section-team">
+    <section class="section-team" id="team">
       <div class="container pt-awe-64 pb-awe-80">
         <div class="row">
           <div class="col-12">
@@ -762,7 +762,8 @@ $theme = get_bloginfo("template_url");
                 }
                 ?>
                 <span class="fz-18"><?php the_title(); ?></span>
-                <span class="fw-light fz-14 role">
+                <span class="fw-light fz-12"><?= get_field('role'); ?></span>
+                <i class="fw-light fz-14 area">
                   <?php
                   foreach (wp_get_object_terms($post->ID, 'teammates_types') as $teammate_type) {
                   ?>
@@ -770,8 +771,7 @@ $theme = get_bloginfo("template_url");
                   <?php
                   }
                   ?>
-                </span>
-                <i class="fw-light fz-12"><?= get_field('area'); ?></i>
+                </i>
               </div>
             </div>
           <?php
@@ -791,7 +791,7 @@ $theme = get_bloginfo("template_url");
                     text-awe-blue-first
                     fw-bold
                     p-2
-                  " href="#">
+                  " href="<?= home_url('/equipe'); ?>">
                 VER TODOS
                 <img src="<?= $theme; ?>/dist/image/icons/next.svg" alt="Ícone de seta apontando para a direita" class="img-fluid ms-4" />
               </a>

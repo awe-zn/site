@@ -89,7 +89,7 @@ function pt_projects()
     "show_in_rest" => true,
     "rest_base" => "",
     "rest_controller_class" => "WP_REST_Posts_Controller",
-    "has_archive" => false,
+    "has_archive" => true,
     "show_in_menu" => true,
     "show_in_nav_menus" => true,
     "delete_with_user" => false,
@@ -98,8 +98,9 @@ function pt_projects()
     "map_meta_cap" => true,
     "hierarchical" => false,
     "query_var" => true,
+    "rewrite" => ["slug" => "projetos", "with_front" => true],
     "supports" => ["title", "excerpt", "thumbnail"],
-    "taxonomies" => array("projects_categories"),
+    "taxonomies" => array("projects_types"),
   ];
 
   register_post_type("projects", $args);
@@ -133,7 +134,7 @@ function pt_news()
     "show_in_rest" => true,
     "rest_base" => "",
     "rest_controller_class" => "WP_REST_Posts_Controller",
-    "has_archive" => true,
+    "has_archive" => false,
     "show_in_menu" => true,
     "show_in_nav_menus" => true,
     "delete_with_user" => false,
@@ -141,7 +142,6 @@ function pt_news()
     "capability_type" => "post",
     "map_meta_cap" => true,
     "hierarchical" => false,
-    "rewrite" => ["slug" => "noticias", "with_front" => true],
     "query_var" => true,
     "supports" => ["title", "excerpt", "editor", "thumbnail"],
     "taxonomies" => array("category"),
@@ -178,7 +178,7 @@ function pt_team()
     "show_in_rest" => true,
     "rest_base" => "",
     "rest_controller_class" => "WP_REST_Posts_Controller",
-    "has_archive" => false,
+    "has_archive" => true,
     "show_in_menu" => true,
     "show_in_nav_menus" => true,
     "delete_with_user" => false,
@@ -187,7 +187,8 @@ function pt_team()
     "map_meta_cap" => true,
     "hierarchical" => false,
     "query_var" => true,
-    "supports" => ["title", "thumbnail"],
+    "rewrite" => ["slug" => "equipe", "with_front" => true],
+    "supports" => ["title", "excerpt", "thumbnail"],
     "taxonomies" => array("teammates_types"),
   ];
 
@@ -283,12 +284,11 @@ function tx_projects_types()
     "show_in_menu" => true,
     "show_in_nav_menus" => true,
     "query_var" => true,
-    "rewrite" => ['slug' => 'projects_categories', 'with_front' => true,],
     "show_admin_column" => false,
     "show_in_rest" => true,
-    "rest_base" => "projects_categories",
+    "rest_base" => "projects_types",
     "rest_controller_class" => "WP_REST_Terms_Controller",
-    "show_in_quick_edit" => false,
+    "show_in_quick_edit" => true,
     "show_in_graphql" => false,
   ];
   register_taxonomy("projects_types", [], $args);
@@ -330,10 +330,10 @@ function tx_teammates_types()
     "show_in_menu" => true,
     "show_in_nav_menus" => true,
     "query_var" => true,
-    "rewrite" => ['slug' => 'projects_categories', 'with_front' => true,],
+    "rewrite" => ['slug' => 'teammates_types', 'with_front' => true],
     "show_admin_column" => false,
     "show_in_rest" => true,
-    "rest_base" => "projects_categories",
+    "rest_base" => "teammates_types",
     "rest_controller_class" => "WP_REST_Terms_Controller",
     "show_in_quick_edit" => false,
     "show_in_graphql" => false,
@@ -359,3 +359,74 @@ function remove_default_post_type()
   remove_menu_page('edit.php');
 }
 add_action('admin_menu', 'remove_default_post_type');
+
+
+class new_general_setting
+{
+  function new_general_setting()
+  {
+    add_filter('admin_init', array(&$this, 'register_fields'));
+  }
+  function register_fields()
+  {
+    register_setting('general', 'link_instagram', 'esc_attr');
+    register_setting('general', 'link_behance', 'esc_attr');
+    register_setting('general', 'link_github', 'esc_attr');
+    register_setting('general', 'link_linkedin', 'esc_attr');
+    register_setting('general', 'phone_number', 'esc_attr');
+    register_setting('general', 'link_whatsapp', 'esc_attr');
+    register_setting('general', 'email', 'esc_attr');
+    register_setting('general', 'addres', 'esc_attr');
+
+    add_settings_field('link_instagram', '<label for="link_instagram">' . __('Link do perfil no Instagram', 'link_instagram') . '</label>', array(&$this, 'field_link_instagram'), 'general');
+    add_settings_field('link_behance', '<label for="link_behance">' . __('Link do perfil no Behance', 'link_behance') . '</label>', array(&$this, 'field_link_behance'), 'general');
+    add_settings_field('link_github', '<label for="link_github">' . __('Link do perfil no GitHub', 'link_github') . '</label>', array(&$this, 'field_link_github'), 'general');
+    add_settings_field('link_linkedin', '<label for="link_linkedin">' . __('Link do perfil no LinkedIn', 'link_linkedin') . '</label>', array(&$this, 'field_link_linkedin'), 'general');
+    add_settings_field('phone_number', '<label for="phone_number">' . __('Número telefônico', 'phone_number') . '</label>', array(&$this, 'field_phone_number'), 'general');
+    add_settings_field('link_whatsapp', '<label for="link_whatsapp">' . __('Link do WhatsApp', 'link_whatsapp') . '</label>', array(&$this, 'field_link_whatsapp'), 'general');
+    add_settings_field('email', '<label for="email">' . __('Endereço de email', 'email') . '</label>', array(&$this, 'field_email'), 'general');
+    add_settings_field('addres', '<label for="addres">' . __('Endereço', 'addres') . '</label>', array(&$this, 'field_addres'), 'general');
+  }
+  function field_link_instagram()
+  {
+    $value = get_option('link_instagram', '');
+    echo '<input type="url" id="link_instagram" name="link_instagram" value="' . $value . '" />';
+  }
+  function field_link_behance()
+  {
+    $value = get_option('link_behance', '');
+    echo '<input type="url" id="link_behance" name="link_behance" value="' . $value . '" />';
+  }
+  function field_link_github()
+  {
+    $value = get_option('link_github', '');
+    echo '<input type="url" id="link_github" name="link_github" value="' . $value . '" />';
+  }
+  function field_link_linkedin()
+  {
+    $value = get_option('link_linkedin', '');
+    echo '<input type="url" id="link_linkedin" name="link_linkedin" value="' . $value . '" />';
+  }
+  function field_phone_number()
+  {
+    $value = get_option('phone_number', '');
+    echo '<input type="text" id="phone_number" name="phone_number" value="' . $value . '" />';
+  }
+  function field_link_whatsapp()
+  {
+    $value = get_option('link_whatsapp', '');
+    echo '<input type="url" id="link_whatsapp" name="link_whatsapp" value="' . $value . '" />';
+  }
+  function field_email()
+  {
+    $value = get_option('email', '');
+    echo '<input type="email" id="email" name="email" value="' . $value . '" />';
+  }
+  function field_addres()
+  {
+    $value = get_option('addres', '');
+    echo '<input type="text" id="addres" name="addres" value="' . $value . '" />';
+  }
+}
+
+$new_general_setting = new new_general_setting();

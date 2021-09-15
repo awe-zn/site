@@ -16,13 +16,13 @@
   <?php wp_head(); ?>
 </head>
 
-<body data-page="home">
+<body data-page="home" <?= body_class(); ?>>
   <header class="bg-awe-blue-first sticky-top">
     <div class="container py-4">
       <div class="row">
         <div class="col-auto">
           <div class="h-100 d-flex align-items-center">
-            <a href="./" class="d-inline-flex">
+            <a href="<?= get_site_url(); ?>" class="d-inline-flex">
               <img src="<?= $theme; ?>/dist/image/logo.svg" alt="AWE Logo" class="img-fluid logo-header" />
             </a>
           </div>
@@ -41,8 +41,8 @@
     <div id="menu-modal" class="position-absolute end-0 collapse z-500">
       <div class="py-4 px-3 bg-white">
         <div class="row row-cols-1 row-cols-md-2 gx-1 gapy-1 bg-awe-blue-first">
-          <div class="col ps-0">
-            <a href="./agency.html" class="
+          <div class="col ps-0 pe-0 pe-md-awe-2">
+            <a href="<?= home_url('about'); ?>" class="
                   d-flex
                   flex-column
                   align-items-center
@@ -58,8 +58,8 @@
               </div>
             </a>
           </div>
-          <div class="col pe-0">
-            <a href="#" class="
+          <div class="col pe-0 ps-0 ps-md-awe-2">
+            <a href="<?= home_url('#team'); ?>" class="
                   d-flex
                   flex-column
                   align-items-center
@@ -75,8 +75,8 @@
               </div>
             </a>
           </div>
-          <div class="col ps-0">
-            <a href="#" class="
+          <div class="col ps-0 pe-0 pe-md-awe-2">
+            <a href="<?= home_url('#section-search'); ?>" class="
                   d-flex
                   flex-column
                   align-items-center
@@ -94,8 +94,8 @@
               </div>
             </a>
           </div>
-          <div class="col pe-0">
-            <a href="./projects.html" class="
+          <div class="col pe-0 ps-0 ps-md-awe-2">
+            <a href="<?= home_url('#projects'); ?>" class="
                   d-flex
                   flex-column
                   align-items-center

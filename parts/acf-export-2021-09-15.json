@@ -116,8 +116,8 @@
         "fields": [
             {
                 "key": "field_6141720589669",
-                "label": "Área",
-                "name": "area",
+                "label": "Cargo",
+                "name": "role",
                 "type": "text",
                 "instructions": "",
                 "required": 1,
